@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа 5</title>
+    <link rel="stylesheet" href="hamdy.css">
+
+    <!-- 1. ربط مكتبة jQuery عبر CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- 2. ربط مكتبة Vue.js عبر CDN في الـ head -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+
+        <div class="fixed-text">Лаба 5 готово</div>
+
+        <h1>Отчет по лабораторной работе №5</h1>
+
+        <p><b>Навигация (Ссылки):</b></p>
+        <p>
+            <a href="#cmd-part">Перейти к командам</a> |
+            <a href="#table-part">Перейти к таблице</a> |
+            <a href="contacts.html">Страница контактов (в этой папке)</a> |
+            <a href="https://google.com" target="_blank">Ссылка на Google</a>
+        </p>
+
+        <hr>
+
+        <button @click="showText = !showText">
+            {{ showText ? 'Скрыть блок текста' : 'Показать блок текста' }}
+        </button>
+
+        <div id="my-text-block" v-show="showText">
+            <img src="img1.png" class="my-image" alt="компьютер" width="150">
+            <p>В этой лабораторной работе мы объединили использование jQuery и Vue.js для улучшения интерактивности нашего проекта по сборке компьютера.</p>
+            <p>Ниже представлены таблицы, формы и элементы управления с расширенным списком комплектующих, обновленным оформлением и динамическим поведением.</p>
+        </div>
+
+        <hr>
+
+        <div id="cmd-part">
+            <h2>Раздел 1: Скриншоты команд CMD</h2>
+
+            <p>1.5.1 Сравнение файлов через COMP:</p>
+            <p><code>comp file1.txt file2.txt /L /D</code></p>
+            <img src="img1.png" alt="экран 1" width="450"><br><br>
+
+            <p>1.5.2 Поиск текста через FIND:</p>
+            <p><code>find "text" file1.txt</code></p>
+            <img src="img2.png" alt="экран 2" width="450"><br><br>
+
+            <p>1.5.3 Проверка версии через VER:</p>
+            <p><code>ver</code></p>
+            <img src="img3.png" alt="экран 3" width="450"><br><br>
+
+            <p>1.5.4 Конвейер сортировки строк:</p>
+            <p><code>type file1.txt | sort</code></p>
+            <img src="img4.png" alt="экран 4" width="450">
+        </div>
+
+        <h3>Список изученных устройств:</h3>
+        <ul>
+            <li>Устройства для ввода (Мышка, клавиатура)</li>
+            <li>Устройства для вывода (Монитор)</li>
+        </ul>
+
+        <div class="css3-demo">
+            <h3>Проверка приоритетов стилей</h3>
+            <p class="green-text" style="color: red;">Этот текст будет красным, потому что стиль внутри тега важнее класса.</p>
+        </div>
+
+        <hr>
+
+        <div id="table-part">
+            <h2>Раздел 2: Таблица комплектующих</h2>
+            <table>
+                <caption>Цены на комплектующие компьютерные детали</caption>
+                <tr>
+                    <th>Тип детали</th>
+                    <th>Название</th>
+                    <th>Цена в тенге</th>
+                </tr>
+                <tr>
+                    <td class="col1">Процессоры для обработки данных на компьютере.</td>
+                    <td class="col2">Intel Core i5</td>
+                    <td>120 000</td>
+                </tr>
+                <tr>
+                    <td class="col1">Видеокарты для вывода графики на экран монитора.</td>
+                    <td class="col2">NVIDIA RTX 4060</td>
+                    <td>250 000</td>
+                </tr>
+                <tr>
+                    <td class="col1">Оперативная память для быстрой работы приложений.</td>
+                    <td class="col2">Kingston Fury 16GB</td>
+                    <td>45 000</td>
+                </tr>
+                <tr>
+                    <td class="col1">Твердотельный накопитель для хранения системы и файлов.</td>
+                    <td class="col2">Samsung 980 NVMe 1TB</td>
+                    <td>55 000</td>
+                </tr>
+            </table>
+        </div>
+
+        <hr>
+
+        <h2>Раздел 3: Форма и структура Flexbox</h2>
+        <div class="flex-box">
+
+            <div class="flex-item">
+                <h3>Форма заказа</h3>
+                <form action="#" @submit.prevent="submitOrder">
+                    <label>Ваше Имя:</label><br>
+                    <input type="text" name="student_name" v-model="userName"><br>
+                    <p>Привет, <b>{{ userName || 'Гость' }}</b>!</p><br>
+
+                    <label>Выбор детали:</label><br>
+                    <select name="hardware_select" v-model="selectedPart">
+                        <option value="Процессор — Intel Core i5 (120 000 тг)">Процессор (Intel Core i5 )</option>
+                        <option value="Видеокарта — NVIDIA RTX 4060 (250 000 тг)">Видеокарта (NVIDIA RTX 4060 )</option>
+                        <option value="Оперативная память — Kingston 16GB (45 000 тг)">Оперативная память (RAM 16GB)</option>
+                        <option value="Накопитель — Samsung NVMe 1TB (55 000 тг)">Накопитель (SSD 1TB)</option>
+                        <option value="Материнская плата — ASUS B650 (95 000 тг)">Материнская плата</option>
+                        <option value="Блок питания — Corsair 650W (38 000 тг)">Блок питания (PSU 650W)</option>
+                    </select>
+                    <p>Выбрано: <b>{{ selectedPart }}</b></p><br>
+
+                    <label>Нужна доставка?</label><br>
+                    <input type="radio" name="delivery" value="Да" v-model="delivery"> Да
+                    <input type="radio" name="delivery" value="Нет" v-model="delivery"> Нет<br><br>
+
+                    <input type="submit" value="Отправить">
+                    <p v-if="orderMessage" style="color: #15803d; font-weight: bold; margin-top: 10px;">
+                        {{ orderMessage }}
+                    </p>
+                </form>
+            </div>
+
+            <div class="flex-item">
+                <h3>Информация</h3>
+                <p>Здесь используется Vue.js для мгновенного обновления имени, выбранной детали и статуса заказа без перезагрузки страницы.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="hamdy.js"></script>
+</body>
+</html>10

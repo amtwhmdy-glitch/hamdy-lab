@@ -1,0 +1,242 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    background-color: #f4f6f9;
+    color: #1f2933;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 28px;
+    color: #1e3a5f;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 22px;
+    color: #243b53;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 18px;
+    color: #334e68;
+}
+
+p, li, label, select, input {
+    font-size: 16px;
+}
+
+#my-text-block {
+    border: 2px solid #cbd5e1;
+    border-left: 6px solid #2563eb;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 22px 28px;
+    font-family: "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.7;
+    text-align: justify;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+}
+
+#my-text-block p {
+    text-indent: 1.5cm;
+}
+
+#my-text-block p::first-letter {
+    font-size: 21px;
+    font-weight: bold;
+    color: #1e3a5f;
+}
+
+.my-image {
+    float: left;
+    margin-right: 18px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+caption {
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 10px;
+    color: #1f2933;
+}
+
+th, td {
+    border: 1px solid #cbd5e1;
+    padding: 12px 14px;
+    font-size: 16px;
+}
+
+th {
+    background-color: #e2e8f0;
+    color: #0f172a;
+    text-align: left;
+}
+
+td.col1 {
+    text-align: justify;
+}
+
+td.col2 {
+    text-align: center;
+}
+
+tr td:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+tr td:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 24px;
+}
+
+a {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #0f172a;
+    text-decoration: underline;
+}
+
+.green-text {
+    color: #15803d;
+}
+
+.css3-demo {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+    padding: 16px;
+    margin-top: 15px;
+}
+
+.fixed-text {
+    position: fixed;
+    bottom: 14px;
+    right: 14px;
+    background-color: #fef08a;
+    color: #1e293b;
+    border: 1px solid #eab308;
+    border-radius: 6px;
+    padding: 7px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 100;
+}
+
+.flex-box {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.flex-item {
+    flex: 1;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 18px;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+}
+
+/* تنسيق عصري ومريح للأزرار */
+button, input[type="submit"] {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 7px;
+    cursor: pointer;
+    margin: 5px 5px 5px 0;
+    transition: background-color 0.25s ease, transform 0.12s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* وضع ليلي مريح للعين (Dark Mode) */
+body.dark-mode {
+    background-color: #12161f !important;
+    color: #e5e7eb !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #93c5fd !important;
+}
+
+body.dark-mode #my-text-block,
+body.dark-mode .flex-item,
+body.dark-mode .css3-demo,
+body.dark-mode table {
+    background-color: #1b2230 !important;
+    border-color: #334155 !important;
+    color: #e5e7eb !important;
+}
+
+body.dark-mode caption {
+    color: #e5e7eb !important;
+}
+
+body.dark-mode th {
+    background-color: #273244 !important;
+    color: #f8fafc !important;
+    border-color: #3b4963 !important;
+}
+
+body.dark-mode td {
+    border-color: #334155 !important;
+    color: #e5e7eb !important;
+}
+
+body.dark-mode tr td:nth-child(even) {
+    background-color: #1f2838 !important;
+}
+
+body.dark-mode tr td:nth-child(odd) {
+    background-color: #1b2230 !important;
+}
+
+body.dark-mode a {
+    color: #60a5fa !important;
+}
+
+body.dark-mode button,
+body.dark-mode input[type="submit"] {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+body.dark-mode button:hover,
+body.dark-mode input[type="submit"]:hover {
+    background-color: #2563eb;
+}
